@@ -1,7 +1,5 @@
 package br.com.fiap.estabelecimento.domain;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,14 +10,14 @@ public class Estabelecimento {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Integer id;
 	private String nome;
 	private String descricao;
 
 	public Estabelecimento() {
 	}
 
-	public Estabelecimento(long id, String nome, String descricao) {
+	public Estabelecimento(Integer id, String nome, String descricao) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -32,11 +30,11 @@ public class Estabelecimento {
 		this.descricao = estabelecimento.getDescricao();
 	}
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

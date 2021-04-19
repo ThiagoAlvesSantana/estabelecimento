@@ -10,7 +10,7 @@ public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Integer id;
 	private String nome;
 	private String marca;
 	private String descricao;
@@ -18,7 +18,7 @@ public class Produto {
 	public Produto() {
 	}
 
-	public Produto(long id, String nome, String marca, String descricao) {
+	public Produto(Integer id, String nome, String marca, String descricao) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -33,11 +33,11 @@ public class Produto {
 		this.descricao = produto.getDescricao();
 	}
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
