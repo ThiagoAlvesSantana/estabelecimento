@@ -20,7 +20,7 @@ public class EstabelecimentoService {
 		return repository.findAll(PageRequest.of(0, 3));
 	}
 
-	public Estabelecimento listEstabelecimento(long id) {
+	public Estabelecimento listEstabelecimento(Integer id) {
 		Optional<Estabelecimento> opEstabeleciomento = repository.findById(id);
 		return opEstabeleciomento.get();
 	}
@@ -29,7 +29,7 @@ public class EstabelecimentoService {
 		repository.save(estabelecimento);
 	}
 
-	public void deletarEstabelecimento(long id) {
+	public void deletarEstabelecimento(Integer id) {
 		repository.deleteById(id);
 	}
 }

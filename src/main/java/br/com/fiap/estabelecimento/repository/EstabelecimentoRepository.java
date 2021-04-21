@@ -7,6 +7,6 @@ import br.com.fiap.estabelecimento.domain.Estabelecimento;
 
 
 @Repository
-public interface EstabelecimentoRepository extends PagingAndSortingRepository<Estabelecimento, Long>{
+public interface EstabelecimentoRepository extends PagingAndSortingRepository<Estabelecimento, Integer>{
 
 }

@@ -8,7 +8,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,19 +31,19 @@ public class EstabeleciomentoController {
 	}
 	
 	@GetMapping(path = "{id}")
-	public ResponseEntity<Estabelecimento> listEstabelecimento(long id) {
+	public ResponseEntity<Estabelecimento> listEstabelecimento(@PathVariable Integer id) {
 		final Estabelecimento estabelecimento = service.listEstabelecimento(id);
 		return ResponseEntity.ok(estabelecimento);
 	}
 	
 	@PutMapping()
-	public ResponseEntity<Estabelecimento> criarEstabelecimento(Estabelecimento estabelecimento) throws URISyntaxException {
+	public ResponseEntity<Estabelecimento> criarEstabelecimento(@RequestBody Estabelecimento estabelecimento) throws URISyntaxException {
 		service.criarEstabelecimento(estabelecimento);
 		return ResponseEntity.created(new URI("/estabelecimento/"+estabelecimento.getNome())).build();
 	}
 	
 	@DeleteMapping(path = "{id}")
-	public ResponseEntity<Long> deletarEstabelecimento(long id) {
+	public ResponseEntity<Long> deletarEstabelecimento(@PathVariable Integer id) {
 		service.deletarEstabelecimento(id);
 		return ResponseEntity.ok().build();
 	}

@@ -1,15 +1,23 @@
 package br.com.fiap.estabelecimento.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Estabelecimento {
+@Table(name = Estabelecimento.TABLE)
+public class Estabelecimento implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	protected static final String TABLE = "TAB_ESTABELECIMENTO";
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer id;
 	private String nome;
 	private String descricao;
